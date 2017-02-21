@@ -8,3 +8,4 @@ git status
 git add .
 git commit -m "prueba commit3" 
 git push
+pause
