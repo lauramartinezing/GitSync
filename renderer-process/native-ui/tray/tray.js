@@ -1,9 +1,12 @@
+const remote = require('electron').remote; 
 const ipc = require('electron').ipcRenderer
-
+const BrowserWindow = require('browser-window');
 const trayBtn = document.getElementById('put-in-tray')
 let trayOn = false
 
 trayBtn.addEventListener('click', function (event) {
+  var focusedWindow    = BrowserWindow.getAllWindows();
+  focusedWindow.hide();
   if (trayOn) {
     trayOn = false
     document.getElementById('tray-countdown').innerHTML = ''

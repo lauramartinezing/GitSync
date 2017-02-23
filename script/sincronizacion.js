@@ -6,10 +6,11 @@ const ipc = require('electron').ipcRenderer
 const selectDirBtn = document.getElementById('demo-button')
 const selectDirBtn2 = document.getElementById('demo-button2')
 var exec = require('child_process').exec;
+const remote = require('electron').remote;
 
 
 selectDirBtn.addEventListener('click', function(event) {
-    ipc.send('open-file-dialog');
+   
     executeBad();
     setInterval(function() {
         executeBad();
@@ -17,47 +18,44 @@ selectDirBtn.addEventListener('click', function(event) {
 })
 
 selectDirBtn2.addEventListener('click', function(event) {
+    console.log(remote.getGlobal('selectedDirectory').path);
     executeComand();
+
+    setInterval(function() {
+        executeComand();;
+    }, 60000);
 })
 
-ipc.on('demo-button', function(event, path) {
-    console.log(path);
-    document.getElementById('selected-file').innerHTML = `You selected: ${path}`
-})
+
 
 function executeComand() {
     execute('git --version', function(output) {
         console.log(output);
     });
 
-    execute('cd D:\\Dropbox (Consultoría)\\LaunchProgram\\3.Week MVP\\RepositorioLaura2', function(output) {
+    execute('git log', function(output) {
         console.log(output);
-        execute('pwd', function(output){
-          console.log('Current path', output);
-        });
-        execute('git log', function(output) {
-            console.log(output);
-        });
-
-        execute('git add .', function(output) {
-            console.log(output);
-        });
-
-        execute('git commit -m autosave', function(output) {
-            console.log(output);
-        });
-
-        execute('git push', function(output) {
-            console.log(output);
-        });
-
+    });
+    execute('git branch', function(output) {
+        console.log(output);
     });
 
+    execute('git add .', function(output) {
+        console.log(output);
+    });
 
+    execute('git commit -m autosave', function(output) {
+        console.log(output);
+    });
+
+    execute('git push', function(output) {
+        console.log(output);
+    });
 }
 
 function execute(command, callback) {
-    exec(command, function(error, stdout, stderr) {
+
+    exec(command, {cwd: remote.getGlobal('selectedDirectory').path}, function(error, stdout, stderr) {
         callback(stdout);
     });
 };

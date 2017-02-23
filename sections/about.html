@@ -6,17 +6,21 @@
           <h2>Git Sync</h2>
             <p>Synchronize your source code all the time. 
         </section>
+        <section class="about-section play-along">
+          <span class="demo-response" id="selected-file"></span>
+        </section>
         <footer class="about-section footer">
           <div class="rainbow-button-wrapper">
             <button id="select-directory" class="about-button">Seleccionar Directorio</button>
-			     <span class="demo-response" id="selected-file"></span>
-
-          </div>
+			     </div>
 		      <div  class="rainbow-button-wrapper">
           <button class="about-button" id="demo-button">Run Sync</button>  
           </div>
           <div  class="rainbow-button-wrapper">
           <button class="about-button" id="demo-button2">Run Sync create</button>  
+          </div>
+           <div  class="rainbow-button-wrapper">
+          <button class="demo-button" id="put-in-tray">View Tray</button>
           </div>
         </footer>
       </main>
@@ -26,5 +30,6 @@
   <script type="text/javascript">
       require('./renderer-process/native-ui/dialogs/open-file')
       require('./script/sincronizacion')
+      require('./renderer-process/native-ui/tray/tray')
     </script>
 </template>
