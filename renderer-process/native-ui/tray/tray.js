@@ -6,7 +6,7 @@ let trayOn = false
 
 trayBtn.addEventListener('click', function (event) {
   var focusedWindow    = BrowserWindow.getFocusedWindow();
-  //focusedWindow.hide();
+  focusedWindow.hide();
   if (trayOn) {
     trayOn = false
     document.getElementById('tray-countdown').innerHTML = ''
@@ -23,6 +23,8 @@ ipc.on('tray-removed', function () {
   ipc.send('remove-tray')
   trayOn = false
   document.getElementById('tray-countdown').innerHTML = ''
-  var focusedWindow    = BrowserWindow.getFocusedWindow();
-  focusedWindow.show();
+  var windows    = BrowserWindow.getAllWindows();
+  for (var i = 0, len = windows.length; i < len; i++) {
+    windows[i].show();  
+  }
 })

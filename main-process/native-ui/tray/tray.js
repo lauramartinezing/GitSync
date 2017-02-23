@@ -24,7 +24,7 @@ ipc.on('put-in-tray', function (event) {
 })
 
 ipc.on('remove-tray', function () {
-  //appIcon.destroy()
+  appIcon.destroy()
 })
 
 app.on('window-all-closed', function () {

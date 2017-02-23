@@ -3,6 +3,18 @@ const glob = require('glob')
 const electron = require('electron')
 const autoUpdater = require('./auto-updater')
 
+//Instalador
+var electronInstaller = require('electron-winstaller');
+resultPromise = electronInstaller.createWindowsInstaller({
+    appDirectory: '/',
+    outputDirectory: 'installer',
+    authors: 'Laura y Juan Camilo',
+    exe: 'GytSyncInstaller.exe'
+  });
+
+resultPromise.then(() => console.log("It worked!"), (e) => console.log(`No dice: ${e.message}`));
+
+
 const BrowserWindow = electron.BrowserWindow
 const app = electron.app
 
