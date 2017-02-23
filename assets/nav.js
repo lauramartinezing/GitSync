@@ -5,13 +5,17 @@ storage.get('activeSectionButtonId', function (err, id) {
   if (err) return console.error(err)
 
   if (id && id.length) {
-    showMainContent()
-    const section = document.getElementById(id)
-    if (section) section.click()
+    //showMainContent()
+    //const section = document.getElementById(id)
+    //if (section) section.click()
+    activateDefaultSection()
+    displayAbout()
   } else {
     activateDefaultSection()
     displayAbout()
   }
+
+
 })
 
 document.body.addEventListener('click', function (event) {

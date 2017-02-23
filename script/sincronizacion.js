@@ -25,8 +25,12 @@ ipc.on('demo-button', function (event, path) {
 
 function executeComand()
 {
-
   execute('git --version', function(output) {
+    console.log(output);});
+
+  execute('cd D:\\Dropbox (Consultoría)\\LaunchProgram\\3.Week MVP\\RepositorioLaura2', function(output) {
+    console.log(output);
+    execute('git log', function(output) {
     console.log(output);});
 
  execute('git add .', function(output) {
@@ -38,6 +42,9 @@ function executeComand()
  execute('git push', function(output) {
     console.log(output);});
 
+  });
+
+  
 }
 
 function execute(command, callback){
