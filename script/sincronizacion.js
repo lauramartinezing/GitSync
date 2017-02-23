@@ -10,8 +10,9 @@ const ipc = require('electron').ipcRenderer
 const selectDirBtn = document.getElementById('demo-button')
 
 selectDirBtn.addEventListener('click', function (event) {
+  executeBad();
 console.log('test btn 1');
-setInterval(function(){ executeBad(); }, 10000);  
+setInterval(function(){ executeBad(); }, 60000);  
 })
 
 const selectDirBtn2 = document.getElementById('demo-button2')
