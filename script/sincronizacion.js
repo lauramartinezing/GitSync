@@ -60,7 +60,7 @@ const spawn = require('child_process').spawn;
 const bat = spawn('cmd.exe', ['/c', myBatFilePath]);
 
   var  repositorio= 'git@github.com:lauramartinezing/GitSync.git'
-var folder= document.getElementById('selected-file')
+  var folder= document.getElementById('selected-file')
 
 // Handle normal output
 bat.stdout.on('data', (data) => {
