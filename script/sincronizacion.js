@@ -8,16 +8,23 @@ const selectDirBtn2 = document.getElementById('demo-button2')
 var exec = require('child_process').exec;
 
 
+
+
+
 selectDirBtn.addEventListener('click', function (event) {
-  executeBad();
-    console.log('test btn 1');
-    setInterval(function(){ executeBad(); }, 60000);  
+   ipc.send('open-file-dialog');
+   executeBad();   
+   setInterval(function(){ executeBad(); }, 60000);  
 })
 
 selectDirBtn2.addEventListener('click', function (event) {
   executeComand();  
 })
 
+ipc.on('demo-button', function (event, path) {
+  console.log( path);
+  document.getElementById('selected-file').innerHTML = `You selected: ${path}`
+})
 
 function executeComand()
 {
