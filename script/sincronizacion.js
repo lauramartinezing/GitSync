@@ -12,11 +12,18 @@ const selectDirBtn = document.getElementById('demo-button')
 selectDirBtn.addEventListener('click', function (event) {
 
 setTimeout(function(){
- alert("Hello");
+alert("Hello!");
 executeBad(); }, 100000);
   
 })
 
+function myFunction() {
+    myVar = setTimeout(alertFunc, 3000);
+}
+
+function alertFunc() {
+    alert("Hello!");
+}
 
 function executeBad() {
   var  repositorio= 'git@github.com:lauramartinezing/GitSync.git'
