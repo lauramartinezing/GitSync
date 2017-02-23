@@ -55,7 +55,7 @@ function executeComand() {
 
 function execute(command, callback) {
 
-    exec(command, {cwd: remote.getGlobal('selectedDirectory').path}, function(error, stdout, stderr) {
+    exec(command, {cwd: remote.getGlobal('selectedDirectory').path[0]}, function(error, stdout, stderr) {
         callback(stdout);
     });
 };
