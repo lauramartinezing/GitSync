@@ -24,18 +24,12 @@ function executeComand()
   execute('git --version', function(output) {
     console.log(output);});
 
-  execute('git status', function(output) {
-    console.log(output);});
-
-  execute('git log', function(output) {
-    console.log(output);});
-
  execute('git add .', function(output) {
     console.log(output);});
 
- execute('git commit -m "cambios desde linea de comandos"', function(output) {
+ execute('git commit -m autosave', function(output) {
     console.log(output);});
- 
+
  execute('git push', function(output) {
     console.log(output);});
 
