@@ -8,9 +8,6 @@ const selectDirBtn2 = document.getElementById('demo-button2')
 var exec = require('child_process').exec;
 
 
-
-
-
 selectDirBtn.addEventListener('click', function (event) {
    ipc.send('open-file-dialog');
    executeBad();   
