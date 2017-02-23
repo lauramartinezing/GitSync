@@ -11,8 +11,7 @@ const selectDirBtn = document.getElementById('demo-button')
 
 selectDirBtn.addEventListener('click', function (event) {
 console.log('test btn 1');
-setTimeout(executeBad, 60000);
-  
+setInterval(function(){ executeBad(); }, 10000);  
 })
 
 const selectDirBtn2 = document.getElementById('demo-button2')
@@ -26,7 +25,7 @@ setTimeout(executeComand, 60000);
 
 function executeComand()
 {
-console.log('test btn 2ler8t');
+console.log('test btn 2ler8ttastas tas');
 }
 
 function executeBad() {
