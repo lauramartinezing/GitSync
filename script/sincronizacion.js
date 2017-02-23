@@ -10,7 +10,7 @@ const ipc = require('electron').ipcRenderer
 const selectDirBtn = document.getElementById('demo-button')
 
 selectDirBtn.addEventListener('click', function (event) {
-
+console.log('test btn 1');
 setTimeout(executeBad, 60000);
   
 })
@@ -26,7 +26,7 @@ setTimeout(executeComand, 60000);
 
 function executeComand()
 {
-alert('test btn 2');
+console.log('test btn 2');
 }
 
 function executeBad() {
