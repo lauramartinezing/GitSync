@@ -26,10 +26,11 @@ setTimeout(executeComand, 60000);
 
 function executeComand()
 {
-console.log('test btn 2');
+console.log('test btn 2ler8t');
 }
 
 function executeBad() {
+  alert('execute');
   var  repositorio= 'git@github.com:lauramartinezing/GitSync.git'
 var folder= document.getElementById('selected-file')
 
