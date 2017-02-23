@@ -3,28 +3,52 @@
 
 
 const ipc = require('electron').ipcRenderer
-
 const selectDirBtn = document.getElementById('demo-button')
+const selectDirBtn2 = document.getElementById('demo-button2')
+var exec = require('child_process').exec;
+
 
 selectDirBtn.addEventListener('click', function (event) {
   executeBad();
-console.log('test btn 1');
-setInterval(function(){ executeBad(); }, 60000);  
+    console.log('test btn 1');
+    setInterval(function(){ executeBad(); }, 60000);  
 })
 
-const selectDirBtn2 = document.getElementById('demo-button2')
-
 selectDirBtn2.addEventListener('click', function (event) {
-
-setTimeout(executeComand, 60000);
-  
+  executeComand();  
 })
 
 
 function executeComand()
 {
-console.log('test btn 2ler8ttastas tas');
+  execute('git --version', function(output) {
+    console.log(output);});
+
+  execute('git status', function(output) {
+    console.log(output);});
+
+  execute('git log', function(output) {
+    console.log(output);});
+
+ execute('git add .', function(output) {
+    console.log(output);});
+
+ execute('git commit -m "cambios desde linea de comandos"', function(output) {
+    console.log(output);});
+ 
+ execute('git push', function(output) {
+    console.log(output);});
+
+
 }
+
+function execute(command, callback){
+    exec(command, function(error, stdout, stderr){ callback(stdout); });
+};
+
+// call the function
+
+
 
 function executeBad() {
   alert('execute');
