@@ -21,6 +21,7 @@ selectDirBtn2.addEventListener('click', function (event) {
 
 function executeComand()
 {
+
   execute('git --version', function(output) {
     console.log(output);});
 
@@ -32,7 +33,6 @@ function executeComand()
 
  execute('git push', function(output) {
     console.log(output);});
-
 
 }
 
