@@ -12,7 +12,7 @@ const selectDirBtn = document.getElementById('demo-button')
 selectDirBtn.addEventListener('click', function (event) {
 
 setTimeout(function(){
-alert("Hello!");
+
 executeBad(); }, 100000);
   
 })
