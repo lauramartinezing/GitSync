@@ -33,9 +33,9 @@ function executeComand() {
         console.log(output);
     });
 
-    execute('git log', function(output) {
-        console.log(output);
-    });
+   // execute('git log', function(output) {
+   //     console.log(output);
+    //});
     execute('git branch', function(output) {
         console.log(output);
     });

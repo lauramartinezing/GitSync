@@ -1,12 +1,12 @@
-const remote = require('electron').remote; 
 const ipc = require('electron').ipcRenderer
-const BrowserWindow = require('browser-window');
+const remote = require('electron').remote;
+const BrowserWindow = remote.BrowserWindow;
 const trayBtn = document.getElementById('put-in-tray')
 let trayOn = false
 
 trayBtn.addEventListener('click', function (event) {
-  var focusedWindow    = BrowserWindow.getAllWindows();
-  focusedWindow.hide();
+  var focusedWindow    = BrowserWindow.getFocusedWindow();
+  //focusedWindow.hide();
   if (trayOn) {
     trayOn = false
     document.getElementById('tray-countdown').innerHTML = ''
@@ -23,4 +23,6 @@ ipc.on('tray-removed', function () {
   ipc.send('remove-tray')
   trayOn = false
   document.getElementById('tray-countdown').innerHTML = ''
+  var focusedWindow    = BrowserWindow.getFocusedWindow();
+  focusedWindow.show();
 })

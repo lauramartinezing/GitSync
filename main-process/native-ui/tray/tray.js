@@ -16,13 +16,15 @@ ipc.on('put-in-tray', function (event) {
     click: function () {
       event.sender.send('tray-removed')
     }
-  }])
+  }
+
+  ])
   appIcon.setToolTip('Electron Demo in the tray.')
   appIcon.setContextMenu(contextMenu)
 })
 
 ipc.on('remove-tray', function () {
-  appIcon.destroy()
+  //appIcon.destroy()
 })
 
 app.on('window-all-closed', function () {
