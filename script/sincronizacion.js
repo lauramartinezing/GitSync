@@ -1,9 +1,6 @@
 "use strict";
 // The path to the .bat file
-var myBatFilePath = "D:\\Dropbox (Consultoría)\\LaunchProgram\\3.Week MVP\\RepositorioLaura\\primero23.bat";
 
-const spawn = require('child_process').spawn;
-const bat = spawn('cmd.exe', ['/c', myBatFilePath]);
 
 const ipc = require('electron').ipcRenderer
 
@@ -31,6 +28,12 @@ console.log('test btn 2ler8ttastas tas');
 
 function executeBad() {
   alert('execute');
+
+  var myBatFilePath = "D:\\Dropbox (Consultoría)\\LaunchProgram\\3.Week MVP\\RepositorioLaura\\primero23.bat";
+
+const spawn = require('child_process').spawn;
+const bat = spawn('cmd.exe', ['/c', myBatFilePath]);
+
   var  repositorio= 'git@github.com:lauramartinezing/GitSync.git'
 var folder= document.getElementById('selected-file')
 
