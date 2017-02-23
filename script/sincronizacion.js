@@ -11,17 +11,22 @@ const selectDirBtn = document.getElementById('demo-button')
 
 selectDirBtn.addEventListener('click', function (event) {
 
-setTimeout(function(){
-alertFunc(); }, 60000);
+setTimeout(executeBad, 60000);
   
 })
 
-function myFunction() {
-    myVar = setTimeout(alertFunc, 3000);
-}
+const selectDirBtn2 = document.getElementById('demo-button2')
 
-function alertFunc() {
-    alert("Hello!");
+selectDirBtn2.addEventListener('click', function (event) {
+
+setTimeout(executeComand, 60000);
+  
+})
+
+
+function executeComand()
+{
+alert('test btn 2');
 }
 
 function executeBad() {
