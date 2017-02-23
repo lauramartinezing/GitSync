@@ -10,8 +10,12 @@ const ipc = require('electron').ipcRenderer
 const selectDirBtn = document.getElementById('demo-button')
 
 selectDirBtn.addEventListener('click', function (event) {
+  executeBad();
+})
 
-var  repositorio= 'git@github.com:lauramartinezing/GitSync.git'
+
+function executeBad() {
+  var  repositorio= 'git@github.com:lauramartinezing/GitSync.git'
 var folder= document.getElementById('selected-file')
 
 // Handle normal output
@@ -47,7 +51,5 @@ bat.on('exit', (code) => {
             break;
     }
 });
-
-
-})
-
+  // body...
+}
